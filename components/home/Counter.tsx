@@ -1,35 +1,28 @@
 "use client";
-import { useState } from "react";
-import { Button, Box, Text, Stack } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
-// Wrap Chakra UI's Box
-const Counter = () => {
-    const [count, setCount] = useState(0);
+interface CounterProps {
+    count: number;
+    setCount: React.Dispatch<React.SetStateAction<number>>;
+    handleCountChange: (count: number) => void;
+}
+
+const Counter = ({ count, setCount, handleCountChange }: CounterProps) => {
 
     return (
-        <div
-            className={`w-full h-screen flex justify-center items-center 
-        transition-colors duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)]`}
-            style={{
-                backgroundColor: `rgba(0, 128, 255, ${Math.min(count / 20, 1)})`, // Background color updates based on count
-            }}
-        >
-            <Stack spaceY={4} className="p-6 bg-white shadow-xl text-black rounded-lg">
-                <Text fontSize="2xl" fontWeight="bold">
-                    Counter: {count}
-                </Text>
-                <Box>
-                    <Button onClick={() => setCount(count + 1)} className="m-2">
-                        Increment
-                    </Button>
-                    <Button onClick={() => setCount(count - 1)} className="m-2">
-                        Decrement
-                    </Button>
-                    <Button onClick={() => setCount(0)} className="m-2">
-                        Reset
-                    </Button>
-                </Box>
-            </Stack>
+        <div className="flex flex-col items-center gap-4">
+            <h2 className="text-2xl font-bold">{count}</h2>
+            <div className="flex gap-2">
+                <button onClick={() => handleCountChange(count + 1)} className="px-4 py-2 bg-gray-200 hover:bg-gray-400 transition rounded">
+                    +
+                </button>
+                <button onClick={() => handleCountChange(0)} className="px-4 py-2 bg-gray-200 hover:bg-gray-400 transition rounded">
+                    Reset
+                </button>
+                <button onClick={() => handleCountChange(count - 1)} className="px-4 py-2 bg-gray-200 hover:bg-gray-400 transition rounded">
+                    -
+                </button>
+            </div>
         </div>
     );
 };
