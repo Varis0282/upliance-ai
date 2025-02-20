@@ -86,15 +86,15 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-row w-full justify-center items-start gap-16">
+                <div className="flex flex-col md:flex-row w-full justify-center items-start gap-16">
                     {/* 📊 Bar Chart */}
-                    <div className="bg-white p-4 rounded-lg shadow-md w-2/5">
+                    <div className="bg-white p-4 rounded-lg shadow-md md:w-2/5 w-full">
                         <h3 className="text-lg font-semibold text-center mb-2">User Count Comparison</h3>
                         <Bar data={barChartData} />
                     </div>
 
                     {/* 📊 Pie Chart */}
-                    <div className="bg-white p-4 rounded-lg shadow-md w-2/5">
+                    <div className="bg-white p-4 rounded-lg shadow-md md:w-2/5 w-full">
                         <h3 className="text-lg font-semibold text-center mb-2">Users Who Have More/Less Count</h3>
                         <Pie data={pieChartData} />
                     </div>

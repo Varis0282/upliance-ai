@@ -63,21 +63,21 @@ export default function Home() {
       <main className="flex flex-col justify-center items-center min-h-screen w-full pt-4 gap-y-6" style={{ background: bgGradient }}>
         <div className="w-full max-w-5xl grid grid-cols-1 gap-6">
           {/* Left Section: Counter & Rich Text Editor */}
-          <div className="flex flex-row gap-6 w-full">
-            <div className="p-6 bg-white shadow-md rounded-lg w-1/2">
+          <div className="flex flex-col md:flex-row gap-6 w-full px-2 md:px-0">
+            <div className="p-6 bg-white shadow-md rounded-lg w-full md:w-1/2">
               <Counter count={count} setCount={setCount} handleCountChange={handleCountChange} />
             </div>
-            <div className="p-6 bg-white shadow-md rounded-lg w-1/2">
+            <div className="p-6 bg-white shadow-md rounded-lg w-full md:w-1/2">
               <RichTextEditor userData={userData} setUserData={setUserData} />
             </div>
           </div>
 
           {/* Right Section: User Data Forms */}
-          <div className="flex flex-row gap-6 w-full">
-            <div className="p-6 bg-white shadow-md rounded-lg w-1/2">
+          <div className="flex flex-col md:flex-row gap-6 w-full px-2 md:px-0">
+            <div className="p-6 bg-white shadow-md rounded-lg w-full md:w-1/2">
               <UserDataForm userData={userData} setUserData={setUserData} handleFormSubmit={handleFormSubmit} loading={loading} setIsTrueLeave={setIsTrueLeave} />
             </div>
-            <div className="p-6 bg-white shadow-md rounded-lg w-1/2">
+            <div className="p-6 bg-white shadow-md rounded-lg w-full md:w-1/2">
               <UserDataForm2 userData={userData} setUserData={setUserData} handleFormSubmit={handleFormSubmit} loading={loading} setIsTrueLeave={setIsTrueLeave} />
             </div>
           </div>
